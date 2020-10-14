@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".Activities.CreateUserGroup">
+
+    <RelativeLayout
+        android:id="@+id/rlt_cugr_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/layout_border_bottom"
+        android:elevation="1dp">
+
+        <ImageView
+            android:id="@+id/imv_cugr_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="6dp"
+            android:src="@drawable/ic_arrow_left" />
+
+        <TextView
+            android:id="@+id/txv_cugr_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@id/imv_cugr_back"
+            android:gravity="center"
+            android:text="Make your own community"
+            android:textColor="@color/gray"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlt_cugr_top"
+        android:padding="20dp">
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/imv_cugr_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_image" />
+
+        <EditText
+            android:id="@+id/edt_cugr_groupname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imv_cugr_image"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/layout_border_bottom"
+            android:hint="Group Name"
+            android:padding="10dp"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray" />
+
+        <EditText
+            android:id="@+id/edt_cugr_groupdescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edt_cugr_groupname"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/layout_border_bottom"
+            android:gravity="top"
+            android:hint="Group Description"
+            android:inputType="textMultiLine|textCapSentences"
+            android:minHeight="160dp"
+            android:padding="10dp"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_cugr_creategroup"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/green"
+        android:text="CREATE"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

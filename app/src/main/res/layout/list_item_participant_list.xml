@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_border_bottom">
+
+    <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+        android:id="@+id/imv_lpai_userimage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_person_black_24dp" />
+
+    <TextView
+        android:id="@+id/txv_lpai_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/imv_lpai_userimage"
+        android:text="Chamod Diyamantha"
+        android:textColor="@color/colorBlack"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/txv_lpai_usertype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txv_lpai_username"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/imv_lpai_userimage"
+        android:text="Advisor"
+        android:textColor="@color/gray"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/txv_lpai_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txv_lpai_usertype"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/imv_lpai_userimage"
+        android:text="Status"
+        android:textColor="@color/gray"
+        android:textSize="10dp" />
+
+    <Button
+        android:id="@+id/btn_lpai_add"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_button_border"
+        android:textColor="@color/colorWhite"
+        android:text="ADD" />
+
+</RelativeLayout>

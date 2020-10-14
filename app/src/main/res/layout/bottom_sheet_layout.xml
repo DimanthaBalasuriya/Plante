@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlt_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#05FFFFF1"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="50dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <TextView
+        android:id="@+id/txv_btl_dname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Disease name"
+        android:textSize="23dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imv_btl_dclose"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_linear_scale_black_24dp" />
+
+    <TextView
+        android:id="@+id/txv_btl_dcontent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txv_btl_dname"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp" />
+
+    <ImageView
+        android:id="@+id/imv_btl_dimage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/txv_btl_dcontent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        android:src="@drawable/ic_image" />
+
+    <Button
+        android:id="@+id/btn_btl_treatment"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/imv_btl_dimage"
+        android:layout_marginTop="10dp"
+        android:background="@color/green"
+        android:text="Treatments"
+        android:textAllCaps="true"
+        android:textSize="20dp" />
+
+</RelativeLayout>

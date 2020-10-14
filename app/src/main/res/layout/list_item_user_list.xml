@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/layout_border_bottom">
+
+    <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+        android:id="@+id/imv_liul_userimage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_person_black_24dp" />
+
+    <TextView
+        android:id="@+id/txv_liul_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/imv_liul_userimage"
+        android:text="User name"
+        android:textColor="@color/colorBlack"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/txv_liul_usertype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txv_liul_username"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/imv_liul_userimage"
+        android:text="User position"
+        android:textColor="@color/gray"
+        android:textSize="12dp" />
+
+    <Button
+        android:id="@+id/btn_follow"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/button_border"
+        android:text="Follow"
+        android:textColor="@color/colorWhite"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

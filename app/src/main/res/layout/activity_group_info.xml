@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".Activities.GroupInfoActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imv_gia_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="6dp"
+            android:src="@drawable/ic_arrow_left" />
+
+        <TextView
+            android:id="@+id/txv_gia_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="6dp"
+            android:text="Group name"
+            android:textColor="@color/gray"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeLayout1">
+
+        <ImageView
+            android:id="@+id/imv_gia_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_image" />
+
+        <TextView
+            android:id="@+id/txv_gia_createdBy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imv_gia_image"
+            android:background="#20FFFFF8"
+            android:padding="5dp"
+            android:text="Created by ABC, on date"
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/txv_gia_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txv_gia_createdBy"
+            android:background="#20FFFFF8"
+            android:padding="5dp"
+            android:text="The description of the image"
+            android:textColor="@color/gray" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txv_gia_description"
+            android:background="#eee" />
+
+        <TextView
+            android:id="@+id/txv_gia_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txv_gia_description"
+            android:padding="5dp"
+            android:text="Edit group"
+            android:textColor="@color/colorBlack"
+            android:textSize="13dp" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txv_gia_edit"
+            android:background="#eee" />
+
+        <TextView
+            android:id="@+id/txv_gia_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view1"
+            android:padding="5dp"
+            android:text="Add participant"
+            android:textColor="@color/colorBlack"
+            android:textSize="13dp" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txv_gia_add"
+            android:background="#eee" />
+
+        <TextView
+            android:id="@+id/txv_gia_leave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view2"
+            android:padding="5dp"
+            android:text="Leave group"
+            android:textColor="@color/colorBlack"
+            android:textSize="13dp" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txv_gia_leave"
+            android:background="#eee" />
+
+        <TextView
+            android:id="@+id/txv_gia_participantcount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view3"
+            android:padding="5dp"
+            android:text="Participants (Count)"
+            android:textColor="@color/colorBlack"
+            android:textSize="13dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txv_gia_participantcount"
+            android:background="#eee" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relativeLayout2">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_gia_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/list_item_participant_list" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

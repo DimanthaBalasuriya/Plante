@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/rounded_border_list_item"
+    android:elevation="1dp">
+
+    <ImageView
+        android:id="@+id/circle"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_round" />
+
+    <TextView
+        android:id="@+id/txv_tret_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/circle"
+        android:text="Baking soda spray"
+        android:textColor="@color/gray"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/txv_tret_explan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txv_tret_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="6dp"
+        android:layout_toEndOf="@+id/circle"
+        android:gravity="start"
+        android:text="Dissolve 1 teaspoon baking soda in 1 quart of warm water. Add up to 1 teaspoon of liquid soap. Spray leaves thoroughly. This mixture works better as a preventive than as a cure"
+        android:textColor="@color/gray"
+        android:textSize="12dp" />
+
+</RelativeLayout>
