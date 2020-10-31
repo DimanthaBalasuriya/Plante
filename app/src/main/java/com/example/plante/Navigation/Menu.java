@@ -26,8 +26,13 @@ import com.example.plante.R;
 import com.example.plante.Stores;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -41,13 +46,14 @@ public class Menu extends Fragment {
 	private DatabaseReference databaseReference;
 	private RelativeLayout rlt_menu_profile_chip, rel_store, rel_ferti,
 			rel_disease, rel_users, rel_createpost, rel_help, rel_advertisement;
-	private ImageView imv_menu_setting;
+	private ImageView imv_menu_setting, imv_menu_image;
 	
 	SharedPreferences languagesp;
 	SharedPreferences.Editor language;
 	private static final String SINHALA_FONT = "SINHALA";
 	
 	private TextView disease, fertilizer, stores, tcv_textview1, community, askfromcommunity, advertising, notification, helpdesk;
+	private TextView user_name;
 	
 	public Menu() {
 	
@@ -72,6 +78,8 @@ public class Menu extends Fragment {
 		rel_advertisement = v.findViewById(R.id.rel_advertisement);
 		rel_help = v.findViewById(R.id.rel_help);
 		imv_menu_setting = v.findViewById(R.id.imv_menu_setting);
+		imv_menu_image = v.findViewById(R.id.imv_menu_image);
+		
 		stores = v.findViewById(R.id.stores);
 		disease = v.findViewById(R.id.disease);
 		fertilizer = v.findViewById(R.id.fertilizer);
@@ -81,6 +89,7 @@ public class Menu extends Fragment {
 		notification = v.findViewById(R.id.notification);
 		helpdesk = v.findViewById(R.id.helpdesk);
 		tcv_textview1 = v.findViewById(R.id.tcv_textview1);
+		user_name = v.findViewById(R.id.user_name);
 		
 		languagesp = getActivity().getSharedPreferences("Language", MODE_PRIVATE);
 		boolean isSinhala = languagesp.getBoolean("" + SINHALA_FONT, false);
@@ -156,7 +165,7 @@ public class Menu extends Fragment {
 			}
 		});
 		
-/*		Query query = databaseReference.orderByChild("email").equalTo(user.getEmail());
+		Query query = databaseReference.orderByChild("email").equalTo(user.getEmail());
 		
 		query.addValueEventListener(new ValueEventListener() {
 			@Override
@@ -165,7 +174,7 @@ public class Menu extends Fragment {
 					String name = "" + ds.child("name").getValue();
 					String image = "" + ds.child("image").getValue();
 					
-					txv_menu_name.setText(name + "");
+					user_name.setText(name + "");
 					
 					if (!image.equalsIgnoreCase("null")) {
 						try {
@@ -188,7 +197,7 @@ public class Menu extends Fragment {
 			public void onCancelled(@NonNull DatabaseError databaseError) {
 			
 			}
-		});*/
+		});
 		
 		
 		return v;

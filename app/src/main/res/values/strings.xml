@@ -5,7 +5,7 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="confirmpassword">Confirm Password</string>
-    <string name="login">Login</string>
+    <string name="login">Sign in</string>
     <string name="createnewaccount">Create new Account</string>
     <string name="forgetpassword">Forget password?</string>
     <string name="allreadyhaveaccount">Allready an User?</string>
@@ -13,9 +13,9 @@
     <string name="privacy">Privacy</string>
     <string name="policy">Policy</string>
     <string name="rules">Rules</string>
-    <string name="remberpassword">Remembered</string>
+    <string name="remberpassword">Or Remember that?</string>
     <string name="recover">Recover</string>
-    <string name="recoverquote">Recover your account!</string>
+    <string name="recoverquote">Hey, Forget it please put you email here...</string>
     <string name="profile">Profile</string>
     <string name="setting">Setting</string>
     <string name="editprofile">Edit Profile</string>

@@ -38,7 +38,7 @@ public class Home extends Fragment {
 	private List<Post> postList;
 	private AdapterPost adapterPost;
 	
-	private ImageView imv_add_post, imv_post_user_picture, imv_post_more, imv_post_image;
+	private ImageView imv_add_post, imv_post_user_picture, imv_post_more, imv_post_image, imv_home_community;
 	private TextView txv_post_user_name, txv_post_time, txv_post_title, txv_post_content, txv_post_like_count;
 	private Button btn_post_like, btn_post_comment;
 	
@@ -57,6 +57,7 @@ public class Home extends Fragment {
 		imv_post_user_picture = v.findViewById(R.id.imv_post_user_picture);
 		imv_post_more = v.findViewById(R.id.imv_post_more);
 		imv_post_image = v.findViewById(R.id.imv_post_image);
+		imv_home_community = v.findViewById(R.id.imv_home_community);
 		txv_post_user_name = v.findViewById(R.id.txv_post_user_name);
 		txv_post_time = v.findViewById(R.id.txv_post_time);
 		txv_post_title = v.findViewById(R.id.txv_post_title);
@@ -70,6 +71,14 @@ public class Home extends Fragment {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(getActivity(), CreatePost.class);
+				startActivity(intent);
+			}
+		});
+		
+		imv_home_community.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getActivity(), Chat.class);
 				startActivity(intent);
 			}
 		});

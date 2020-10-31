@@ -20,7 +20,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="5dp"
-            android:fontFamily="@font/concert_one"
+            android:fontFamily="sans-serif"
             android:text="Menu"
             android:textColor="@color/green"
             android:textSize="20dp"
@@ -29,7 +29,6 @@
         <ImageView
             android:id="@+id/imv_menu_setting"
             android:layout_width="30dp"
-
             android:layout_height="30dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
@@ -58,6 +57,7 @@
             android:src="@drawable/ic_person_black_24dp" />
 
         <TextView
+            android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -87,7 +87,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="5dp">
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:id="@+id/textView1"
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="2dp"
                 android:text="Utilities"
@@ -110,9 +110,9 @@
                 android:layout_below="@id/textView1"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/layout_border_round">
 
                 <ImageView
@@ -157,9 +157,9 @@
                 android:layout_below="@id/rel_store"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/layout_border_round">
 
                 <ImageView
@@ -204,9 +204,9 @@
                 android:layout_below="@id/rel_ferti"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/layout_border_round">
 
                 <ImageView
@@ -218,7 +218,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="3dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/ic_bubble_chart_black_24dp" />
+                    android:src="@drawable/ic_bubble_chart_white_24dp" />
 
                 <TextView
                     android:id="@+id/disease"
@@ -249,7 +249,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rel_disease"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="2dp"
                 android:text="Social"
@@ -265,9 +265,9 @@
                 android:layout_below="@id/textView2"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/layout_border_round">
 
                 <com.blogspot.atifsoftwares.circularimageview.CircularImageView
@@ -312,9 +312,9 @@
                 android:layout_below="@id/rel_users"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/layout_border_round">
 
                 <ImageView
@@ -358,7 +358,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rel_createpost"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="2dp"
                 android:text="Advertise"
@@ -373,9 +373,9 @@
                 android:layout_below="@id/textView3"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/layout_border_round">
 
                 <ImageView
@@ -419,7 +419,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rel_advertisement"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="2dp"
                 android:text="Help"
@@ -434,9 +434,9 @@
                 android:layout_below="@id/textView4"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/layout_border_round">
 
@@ -482,9 +482,9 @@
                 android:layout_below="@id/rel_notification"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/layout_border_round">
 

@@ -68,6 +68,7 @@ public class Login extends AppCompatActivity {
 			public void onClick(View v) {
 				intent = new Intent(Login.this, RecoverPassword.class);
 				startActivity(intent);
+				finish();
 			}
 		});
 		

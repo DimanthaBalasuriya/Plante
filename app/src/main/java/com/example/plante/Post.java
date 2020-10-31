@@ -1,13 +1,13 @@
 package com.example.plante;
 
 public class Post {
-	String pid, ptitle, pcontent, pLikes, pComments, pImage, ptime, uid, uemail, userImage, uname;
+	String pid, ptitle, pcontent, pLikes, pComments, pImage, ptime, uid, uemail, uprofile, uname;
 	
 	public Post() {
 	
 	}
 	
-	public Post(String pid, String ptitle, String pcontent, String pLikes, String pComments, String pImage, String ptime, String uid, String uemail, String userImage, String uname) {
+	public Post(String pid, String ptitle, String pcontent, String pLikes, String pComments, String pImage, String ptime, String uid, String uemail, String uprofile, String uname) {
 		this.pid = pid;
 		this.ptitle = ptitle;
 		this.pcontent = pcontent;
@@ -17,7 +17,7 @@ public class Post {
 		this.ptime = ptime;
 		this.uid = uid;
 		this.uemail = uemail;
-		this.userImage = userImage;
+		this.uprofile = uprofile;
 		this.uname = uname;
 	}
 	
@@ -93,12 +93,12 @@ public class Post {
 		this.uemail = uemail;
 	}
 	
-	public String getUserImage() {
-		return userImage;
+	public String getUprofile() {
+		return uprofile;
 	}
 	
-	public void setUserImage(String userImage) {
-		this.userImage = userImage;
+	public void setUprofile(String userImage) {
+		this.uprofile = userImage;
 	}
 	
 	public String getUname() {

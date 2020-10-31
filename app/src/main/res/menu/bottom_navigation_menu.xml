@@ -8,13 +8,8 @@
 
     <item
         android:id="@+id/nav_disease"
-        android:icon="@drawable/ic_camera"
+        android:icon="@drawable/ic_baseline_blur_circular_24"
         android:title="Disease" />
-
-    <item
-        android:id="@+id/nav_community"
-        android:icon="@drawable/ic_people"
-        android:title="Chat" />
 
     <item
         android:id="@+id/nav_menu"

@@ -32,7 +32,7 @@ public class SplashScreen extends AppCompatActivity {
 	
 	private void next_activity_loader() {
 		try {
-			Thread.sleep(10);
+			Thread.sleep(50);
 			for (int i = 0; i <= 100; i++) {
 				if (i == 100) {
 					SharedPreferences sp = getSharedPreferences("Credential", MODE_PRIVATE);

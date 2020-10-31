@@ -6,103 +6,124 @@
     android:background="@color/colorWhite"
     tools:context=".Activities.Login">
 
-    <com.blogspot.atifsoftwares.circularimageview.CircularImageView
-        android:id="@+id/imv_login"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/ic_plante" />
-
     <TextView
-        android:id="@+id/txv_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imv_login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/baloo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="525dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
         android:text="Plante"
         android:textAllCaps="true"
         android:textColor="@color/green"
-        android:textSize="30dp"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txv_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:layout_marginBottom="480dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Good Morning!"
+        android:textAllCaps="true"
+        android:textColor="@color/green"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edt_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txv_name"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40sp"
+        android:layout_marginEnd="40sp"
+        android:layout_marginBottom="343sp"
         android:background="@drawable/login_edit_text_border"
+        android:drawableLeft="@drawable/ic_person_black_24dp"
+        android:drawablePadding="10sp"
         android:hint="@string/username"
         android:inputType="textEmailAddress"
-        android:minHeight="50dp"
-        android:paddingLeft="20dp"
+        android:minHeight="50sp"
+        android:paddingLeft="20sp"
         android:textColor="@color/gray"
         android:textColorHint="@color/gray"
-        android:textSize="19dp" />
+        android:textSize="19sp" />
 
     <EditText
         android:id="@+id/edt_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edt_username"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40sp"
+        android:layout_marginEnd="40sp"
+        android:layout_marginBottom="252sp"
         android:background="@drawable/login_edit_text_border"
+        android:drawableLeft="@drawable/security"
+        android:drawablePadding="10sp"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:minHeight="50dp"
-        android:paddingLeft="20dp"
+        android:minHeight="50sp"
+        android:paddingLeft="20sp"
         android:textColor="@color/gray"
         android:textColorHint="@color/gray"
-        android:textSize="19dp" />
+        android:textSize="19sp" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edt_password"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40sp"
+        android:layout_marginEnd="40sp"
+        android:layout_marginBottom="120sp"
         android:background="@drawable/rounded_button_border"
         android:text="@string/login"
-        android:textSize="30dp" />
+        android:textSize="26sp" />
 
     <TextView
         android:id="@+id/txv_forgetpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40sp"
+        android:layout_marginBottom="205sp"
         android:text="@string/forgetpassword"
         android:textAllCaps="true"
         android:textColor="@color/gray"
-        android:textSize="16dp" />
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/txv_createnewaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txv_forgetpassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
         android:text="@string/createnewaccount"
         android:textAllCaps="true"
         android:textColor="@color/green"
-        android:textSize="16dp" />
+        android:textSize="16sp" />
 
 </RelativeLayout>

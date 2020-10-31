@@ -71,7 +71,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyViewHolder> 
 		String uid = postList.get(position).getUid();
 		String uEmail = postList.get(position).getUemail();
 		String uName = postList.get(position).getUname();
-		String uDp = postList.get(position).getUserImage();
+		String uDp = postList.get(position).getUprofile();
 		String pId = postList.get(position).getPid();
 		String pTitle = postList.get(position).getPtitle();
 		String pDescription = postList.get(position).getPcontent();
@@ -80,8 +80,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyViewHolder> 
 		String pLikes = postList.get(position).getpLikes();
 		String pComments = postList.get(position).getpComments();
 		
-		System.out.println("IMAGE USER " + uDp);
-		System.out.println("IMAGE POST " + pimage);
+		Toast.makeText(this.context, "UDP + " + uDp, Toast.LENGTH_LONG);
 		
 		Calendar calendar = Calendar.getInstance(Locale.getDefault());
 		calendar.setTimeInMillis(Long.parseLong(pTimeStamp));

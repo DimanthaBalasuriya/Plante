@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -283,6 +285,7 @@ public class Profile extends AppCompatActivity {
 		AlertDialog.Builder builder = new AlertDialog.Builder(Profile.this);
 		builder.setTitle("Choose option");
 		builder.setItems(option, new DialogInterface.OnClickListener() {
+			@RequiresApi(api = Build.VERSION_CODES.M)
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				if (which == 0) {
@@ -300,14 +303,18 @@ public class Profile extends AppCompatActivity {
 		builder.create().show();
 	}
 	
+	@RequiresApi(api = Build.VERSION_CODES.M)
 	private void showBioChangeDialog() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(Profile.this);
 		builder.setTitle("Update Bio");
 		LinearLayout linearLayout = new LinearLayout(getApplicationContext());
 		linearLayout.setOrientation(LinearLayout.VERTICAL);
-		linearLayout.setPadding(10, 10, 10, 10);
+		linearLayout.setPadding(40, 20, 40, 10);
 		EditText editText = new EditText(getApplicationContext());
 		editText.setHint("Enter Bio");
+		editText.setPadding(10, 0, 0, 0);
+		editText.setHintTextColor(getColor(R.color.colorWhite));
+		editText.setTextColor(getColor(R.color.colorWhite));
 		linearLayout.addView(editText);
 		builder.setView(linearLayout);
 		
@@ -345,14 +352,18 @@ public class Profile extends AppCompatActivity {
 		builder.create().show();
 	}
 	
+	@RequiresApi(api = Build.VERSION_CODES.M)
 	private void showNameChangeDialog() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(Profile.this);
 		builder.setTitle("Update Name");
 		LinearLayout linearLayout = new LinearLayout(getApplicationContext());
 		linearLayout.setOrientation(LinearLayout.VERTICAL);
-		linearLayout.setPadding(10, 10, 10, 10);
+		linearLayout.setPadding(40, 20, 40, 10);
 		EditText editText = new EditText(getApplicationContext());
 		editText.setHint("Enter Name");
+		editText.setPadding(10, 0, 0, 0);
+		editText.setHintTextColor(getColor(R.color.colorWhite));
+		editText.setTextColor(getColor(R.color.colorWhite));
 		linearLayout.addView(editText);
 		builder.setView(linearLayout);
 		
@@ -439,14 +450,18 @@ public class Profile extends AppCompatActivity {
 		builder.create().show();
 	}
 	
+	@RequiresApi(api = Build.VERSION_CODES.M)
 	private void showPositionChangeDialog() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(Profile.this);
 		builder.setTitle("Update Position");
 		LinearLayout linearLayout = new LinearLayout(getApplicationContext());
 		linearLayout.setOrientation(LinearLayout.VERTICAL);
-		linearLayout.setPadding(10, 10, 10, 10);
+		linearLayout.setPadding(40, 20, 40, 10);
 		EditText editText = new EditText(getApplicationContext());
 		editText.setHint("Enter position");
+		editText.setPadding(10, 0, 0, 0);
+		editText.setHintTextColor(getColor(R.color.colorWhite));
+		editText.setTextColor(getColor(R.color.colorWhite));
 		linearLayout.addView(editText);
 		builder.setView(linearLayout);
 		
@@ -456,7 +471,7 @@ public class Profile extends AppCompatActivity {
 				String value = editText.getText().toString().trim();
 				if (!TextUtils.isEmpty(value)) {
 					HashMap<String, Object> result = new HashMap<>();
-					result.put("Position", value);
+					result.put("position", value);
 					databaseReference.child(user.getUid()).updateChildren(result).addOnSuccessListener(new OnSuccessListener<Void>() {
 						@Override
 						public void onSuccess(Void aVoid) {
@@ -658,10 +673,7 @@ public class Profile extends AppCompatActivity {
 		FirebaseUser user = firebaseAuth.getCurrentUser();
 		if (user != null) {
 			uid = user.getUid();
-			System.out.println("UID" + uid);
 		} else {
-			
-			System.out.println("REDIRECT CALL");
 			startActivity(new Intent(getApplicationContext(), Login.class));
 			finish();
 		}

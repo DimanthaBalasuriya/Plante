@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.plante.Activities.Login;
-import com.example.plante.Navigation.Chat;
 import com.example.plante.Navigation.DiseaseRecognition;
 import com.example.plante.Navigation.Home;
 import com.example.plante.Navigation.Menu;
@@ -56,9 +55,9 @@ public class Parent extends AppCompatActivity implements BottomNavigationView.On
 				startActivity(intent);
 				break;
 			
-			case R.id.nav_community:
+			/*case R.id.nav_community:
 				fragment = new Chat();
-				break;
+				break;*/
 			
 			case R.id.nav_menu:
 				fragment = new Menu();

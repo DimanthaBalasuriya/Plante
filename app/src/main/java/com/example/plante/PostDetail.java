@@ -373,11 +373,11 @@ public class PostDetail extends AppCompatActivity {
 			public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 				for (DataSnapshot ds : dataSnapshot.getChildren()) {
 					myName = "" + ds.child("name").getValue();
-					myDp = "" + ds.child("image").getValue();
+					myDp = ds.child("image").getValue().toString();
 					try {
-						Picasso.get().load(myDp).placeholder(R.drawable.ic_usernot).into(userProfileImage);
+						Picasso.get().load(myDp).placeholder(R.drawable.ic_usernot).into(userImage);
 					} catch (Exception e) {
-						Picasso.get().load(R.drawable.ic_usernot).into(userProfileImage);
+						Picasso.get().load(R.drawable.ic_usernot).into(userImage);
 					}
 				}
 			}

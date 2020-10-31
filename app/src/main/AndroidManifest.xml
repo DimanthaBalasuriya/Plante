@@ -28,7 +28,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SplashScreen"></activity>
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".HelpDesk" />
         <activity android:name=".FertilizerDetails" />
         <activity android:name=".Diseases" />
@@ -81,13 +87,7 @@
         <activity android:name=".Activities.Setting" />
         <activity android:name=".RecoverPassword" />
         <activity android:name=".Activities.Signup" />
-        <activity android:name=".Activities.Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Activities.Login"></activity>
         <activity android:name=".Notification" />
         <activity android:name=".Profile" />
         <activity android:name=".Navigation.Menu" />
