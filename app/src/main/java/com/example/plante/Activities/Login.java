@@ -1,6 +1,8 @@
 package com.example.plante.Activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -35,6 +37,7 @@ public class Login extends AppCompatActivity {
 	
 	private FirebaseAuth mAuth;
 	
+	ProgressDialog pd;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,8 @@ public class Login extends AppCompatActivity {
 		edt_password = findViewById(R.id.edt_password);
 		
 		mAuth = FirebaseAuth.getInstance();
+		
+		pd = new ProgressDialog(this);
 		
 		txv_createnewaccount.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -71,9 +76,6 @@ public class Login extends AppCompatActivity {
 			public void onClick(View v) {
 				String username = edt_username.getText().toString().trim();
 				String password = edt_password.getText().toString().trim();
-/*				intent = new Intent(Login.this, Parent.class);
-				startActivity(intent);
-				finish();*/
 				if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
 					edt_username.setText("Enter valid username!");
 					edt_username.setFocusable(true);
@@ -87,6 +89,8 @@ public class Login extends AppCompatActivity {
 	}
 	
 	private void executeLogin(String username, String password) {
+		pd.setMessage("Signing in...");
+		pd.show();
 		mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 			@Override
 			public void onComplete(@NonNull Task<AuthResult> task) {
@@ -106,6 +110,7 @@ public class Login extends AppCompatActivity {
 						hashMap.put("typingTo", "noOne");
 						hashMap.put("position", "");
 						hashMap.put("bio", "");
+						hashMap.put("type", "member");
 						hashMap.put("image", "");
 						
 						FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -114,9 +119,14 @@ public class Login extends AppCompatActivity {
 						
 					}
 					
+					host_user_in_device(username, password);
+					
+					pd.dismiss();
+					
 					intent = new Intent(Login.this, Parent.class);
 					startActivity(intent);
-					//Toast.makeText(getApplicationContext(), "Logged User " + user.getEmail(), Toast.LENGTH_SHORT).show();
+					finish();
+					
 				} else {
 					Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
 				}
@@ -127,5 +137,13 @@ public class Login extends AppCompatActivity {
 				Toast.makeText(getApplicationContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
 			}
 		});
+	}
+	
+	private void host_user_in_device(String username, String password) {
+		SharedPreferences sp = getSharedPreferences("Credential", MODE_PRIVATE);
+		SharedPreferences.Editor edt = sp.edit();
+		edt.putString("username", username);
+		edt.putString("password", password);
+		edt.commit();
 	}
 }

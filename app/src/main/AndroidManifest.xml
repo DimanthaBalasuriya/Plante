@@ -28,7 +28,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".HelpDesk"></activity>
+        <activity android:name=".SplashScreen"></activity>
+        <activity android:name=".HelpDesk" />
         <activity android:name=".FertilizerDetails" />
         <activity android:name=".Diseases" />
         <activity android:name=".Fertilizers" />

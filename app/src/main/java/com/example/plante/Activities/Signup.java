@@ -2,6 +2,7 @@ package com.example.plante.Activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -84,7 +85,7 @@ public class Signup extends AppCompatActivity {
 	}
 	
 	private void executeRegistration(String username, String password) {
-		pd.setMessage("Registering...");
+		pd.setMessage("Signing up...");
 		pd.show();
 		mAuth.createUserWithEmailAndPassword(username, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 			@Override
@@ -102,26 +103,38 @@ public class Signup extends AppCompatActivity {
 					hashMap.put("typingTo", "noOne");
 					hashMap.put("position", "");
 					hashMap.put("bio", "");
+					hashMap.put("type", "member");
 					hashMap.put("image", "");
 					
 					FirebaseDatabase database = FirebaseDatabase.getInstance();
 					DatabaseReference reference = database.getReference("User");
 					reference.child(uid).setValue(hashMap);
+					
+					host_user_in_device(username, password);
+					
 					pd.dismiss();
+					
 					intent = new Intent(Signup.this, Parent.class);
 					startActivity(intent);
 					finish();
+					
 				} else {
-					pd.setMessage("Password Not Match!");
-					pd.show();
+					Toast.makeText(getApplicationContext(), "Password Not Match!", Toast.LENGTH_LONG).show();
 				}
 			}
 		}).addOnFailureListener(new OnFailureListener() {
 			@Override
 			public void onFailure(@NonNull Exception e) {
-				pd.setMessage("Not Signup!");
-				pd.show();
+				Toast.makeText(getApplicationContext(), "Sign up faild!", Toast.LENGTH_LONG).show();
 			}
 		});
+	}
+	
+	private void host_user_in_device(String username, String password) {
+		SharedPreferences sp = getSharedPreferences("Credential", MODE_PRIVATE);
+		SharedPreferences.Editor edt = sp.edit();
+		edt.putString("username", username);
+		edt.putString("password", password);
+		edt.commit();
 	}
 }
