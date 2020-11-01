@@ -21,6 +21,7 @@ import com.example.plante.Activities.UserList;
 import com.example.plante.Diseases;
 import com.example.plante.Fertilizers;
 import com.example.plante.HelpDesk;
+import com.example.plante.Notification;
 import com.example.plante.Profile;
 import com.example.plante.R;
 import com.example.plante.Stores;
@@ -44,15 +45,15 @@ public class Menu extends Fragment {
 	private Intent intent;
 	private FirebaseDatabase firebaseDatabase;
 	private DatabaseReference databaseReference;
-	private RelativeLayout rlt_menu_profile_chip, rel_store, rel_ferti,
-			rel_disease, rel_users, rel_createpost, rel_help, rel_advertisement;
+	private RelativeLayout rlt_menu_profile_chip, rel_store, rel_ferti, rel_notification,
+			rel_disease, rel_users, rel_createpost, rel_help;
 	private ImageView imv_menu_setting, imv_menu_image;
 	
 	SharedPreferences languagesp;
 	SharedPreferences.Editor language;
 	private static final String SINHALA_FONT = "SINHALA";
 	
-	private TextView disease, fertilizer, stores, tcv_textview1, community, askfromcommunity, advertising, notification, helpdesk;
+	private TextView disease, fertilizer, stores, tcv_textview1, community, askfromcommunity, notification, helpdesk;
 	private TextView user_name;
 	
 	public Menu() {
@@ -75,17 +76,16 @@ public class Menu extends Fragment {
 		rel_disease = v.findViewById(R.id.rel_disease);
 		rel_users = v.findViewById(R.id.rel_users);
 		rel_createpost = v.findViewById(R.id.rel_createpost);
-		rel_advertisement = v.findViewById(R.id.rel_advertisement);
 		rel_help = v.findViewById(R.id.rel_help);
 		imv_menu_setting = v.findViewById(R.id.imv_menu_setting);
 		imv_menu_image = v.findViewById(R.id.imv_menu_image);
+		rel_notification = v.findViewById(R.id.rel_notification);
 		
 		stores = v.findViewById(R.id.stores);
 		disease = v.findViewById(R.id.disease);
 		fertilizer = v.findViewById(R.id.fertilizer);
 		community = v.findViewById(R.id.community);
 		askfromcommunity = v.findViewById(R.id.askfromcommunity);
-		advertising = v.findViewById(R.id.advertising);
 		notification = v.findViewById(R.id.notification);
 		helpdesk = v.findViewById(R.id.helpdesk);
 		tcv_textview1 = v.findViewById(R.id.tcv_textview1);
@@ -166,6 +166,14 @@ public class Menu extends Fragment {
 			}
 		});
 		
+		rel_notification.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				intent = new Intent(getActivity(), Notification.class);
+				startActivity(intent);
+			}
+		});
+		
 		Query query = databaseReference.orderByChild("email").equalTo(user.getEmail());
 		
 		query.addValueEventListener(new ValueEventListener() {
@@ -210,7 +218,6 @@ public class Menu extends Fragment {
 		fertilizer.setText(R.string.fertilizers);
 		community.setText(R.string.community);
 		askfromcommunity.setText(R.string.askfromcommunity);
-		advertising.setText(R.string.advertising);
 		notification.setText(R.string.notifiication);
 		helpdesk.setText(R.string.helpdesk);
 		tcv_textview1.setText(R.string.menu);
@@ -222,7 +229,6 @@ public class Menu extends Fragment {
 		fertilizer.setText(R.string.sinhala_fertilizer);
 		community.setText(R.string.sinhala_community);
 		askfromcommunity.setText(R.string.sinhala_askfromcommunity);
-		advertising.setText(R.string.sinhala_advertising);
 		notification.setText(R.string.sinhala_notification);
 		helpdesk.setText(R.string.sinhala_help);
 		tcv_textview1.setText(R.string.sinhala_menu);

@@ -43,6 +43,8 @@ public class Notification extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_notification);
 		
+		firebaseAuth = FirebaseAuth.getInstance();
+		
 		imv_notif_back = findViewById(R.id.imv_notif_back);
 		notification = findViewById(R.id.notification);
 		rcv_noti_list = findViewById(R.id.rcv_noti_list);

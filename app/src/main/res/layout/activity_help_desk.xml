@@ -48,62 +48,9 @@
             android:layout_height="match_parent">
 
             <RelativeLayout
-                android:id="@+id/relativeLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/layout_border_bottom">
-
-                <ImageView
-                    android:id="@+id/plante"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/ic_plante" />
-
-                <TextView
-                    android:id="@+id/about"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/plante"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
-                    android:text="About"
-                    android:textColor="@color/green"
-                    android:textSize="26dp"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_below="@id/about"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="60dp"
-                    android:background="@color/gray" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/about"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center|fill_vertical"
-                    android:text="This book or any portion thereof may not be reproduced or used in any manner whatsoever without the express written permission of the publisher except for the use of brief quotations in a book review"
-                    android:textColor="@color/gray"
-                    android:textSize="17dp"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
                 android:id="@id/relativeLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/relativeLayout2"
                 android:background="@drawable/layout_border_bottom">
 
                 <TextView
@@ -114,7 +61,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
-                    android:text="How to use..."
+                    android:text="What in this app..."
                     android:textColor="@color/colorBlack"
                     android:textSize="16dp"
                     android:textStyle="bold" />
@@ -131,7 +78,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="5dp"
-                    android:text="1. This book or any portion thereof brief quotations in a book review"
+                    android:text="@string/rule1"
                     android:textColor="@color/gray"
                     android:textSize="17dp"
                     android:textStyle="bold" />
@@ -148,7 +95,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="5dp"
-                    android:text="2. This book or any portion thereof brief quotations in a book review"
+                    android:text="@string/rule2"
                     android:textColor="@color/gray"
                     android:textSize="17dp"
                     android:textStyle="bold" />
@@ -165,7 +112,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="5dp"
-                    android:text="3. This book or any portion thereof brief quotations in a book review"
+                    android:text="@string/rule3"
                     android:textColor="@color/gray"
                     android:textSize="17dp"
                     android:textStyle="bold" />
@@ -182,7 +129,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="5dp"
-                    android:text="4. This book or any portion thereof brief quotations in a book review"
+                    android:text="@string/rule4"
                     android:textColor="@color/gray"
                     android:textSize="17dp"
                     android:textStyle="bold" />
@@ -199,7 +146,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="5dp"
-                    android:text="4. This book or any portion thereof brief quotations in a book review"
+                    android:text="@string/rule5"
                     android:textColor="@color/gray"
                     android:textSize="17dp"
                     android:textStyle="bold" />
@@ -216,7 +163,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="5dp"
-                    android:text="6. This book or any portion thereof brief quotations in a book review"
+                    android:text="@string/rule6"
                     android:textColor="@color/gray"
                     android:textSize="17dp"
                     android:textStyle="bold" />
@@ -273,6 +220,19 @@
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="10dp"
                     android:text="Email : www.plante.com"
+                    android:textColor="@color/gray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/devname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/web"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Developer : Chamod Diyamantha Balasuriya"
                     android:textColor="@color/gray"
                     android:textSize="13dp" />
 

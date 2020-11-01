@@ -169,7 +169,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyViewHolder> 
 		hashMap.put("timestamp", timestamp);
 		hashMap.put("pUid", hisUid);
 		hashMap.put("notification", notification);
-		hashMap.put("sUid", pId);
+		hashMap.put("sUid", hisUid);
 		
 		DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
 		reference.child(hisUid).child("Notifications").child(timestamp).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {

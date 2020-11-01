@@ -353,71 +353,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rel_createpost"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="2dp"
-                android:text="Advertise"
-                android:textColor="@color/colorBlack"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <RelativeLayout
-                android:id="@+id/rel_advertisement"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textView3"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/layout_border_round">
-
-                <ImageView
-                    android:id="@+id/imv_list_advertise"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginBottom="3dp"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/ic_assessment_black_24dp" />
-
-                <TextView
-                    android:id="@+id/advertising"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_toEndOf="@+id/imv_list_advertise"
-                    android:text="Advertising"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="19dp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_arrow_right" />
-
-            </RelativeLayout>
-
-            <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/rel_advertisement"
+                android:layout_below="@id/rel_createpost"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"

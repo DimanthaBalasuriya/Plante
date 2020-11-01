@@ -1,6 +1,10 @@
 package com.example.plante.Activities;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +29,12 @@ public class GroupParticipantAdd extends AppCompatActivity {
 	private String groupId, myGroupRole;
 	private ArrayList<ModelUser> userList;
 	private AdapterParticipantAdd adapterParticipantAdd;
+	private ImageView imv_adm_back;
+	private TextView txv_title;
+	
+	SharedPreferences languagesp;
+	SharedPreferences.Editor language;
+	private static final String SINHALA_FONT = "SINHALA";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +44,37 @@ public class GroupParticipantAdd extends AppCompatActivity {
 		firebaseAuth = FirebaseAuth.getInstance();
 		group_participant_list = findViewById(R.id.group_participant_list);
 		
+		imv_adm_back = findViewById(R.id.imv_adm_back);
+		txv_title = findViewById(R.id.txv_title);
+		
+		languagesp = getSharedPreferences("Language", MODE_PRIVATE);
+		boolean isSinhala = languagesp.getBoolean("" + SINHALA_FONT, false);
+		
+		if (isSinhala) {
+			changeToSinhala();
+		} else {
+			changeToEnglish();
+		}
+		
+		
 		groupId = getIntent().getStringExtra("groupId");
 		loadGroupInfo();
+		
+		imv_adm_back.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+		
+	}
+	
+	private void changeToSinhala() {
+		txv_title.setText(R.string.sinhala_add_members);
+	}
+	
+	private void changeToEnglish() {
+		txv_title.setText(R.string.add_members);
 	}
 	
 	private void getAllUsers() {

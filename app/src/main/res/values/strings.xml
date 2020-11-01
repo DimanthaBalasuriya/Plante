@@ -92,6 +92,13 @@
     <string name="disease_list">Disease</string>
     <string name="good_morning">Good Morning!</string>
     <string name="good_evening">Good Evening!</string>
+    <string name="add_members">Add Members</string>
+    <string name="rule1">This app requires storage, and camera permisions from your device.</string>
+    <string name="rule2">User can work with community to solve theri problems.</string>
+    <string name="rule3">User can detect infected disease of plants from this application.</string>
+    <string name="rule4">User can get details of treatments, fertilizes for the disease.</string>
+    <string name="rule5">User can get details about fertilizes, shops and diseases from this app.</string>
+    <string name="rule6">All user data protected by our developers from malicious things.</string>
 
     <string name="sinhala_setting">සැකසුම</string>
     <string name="sinhala_notification">දැනුම්දීම</string>
@@ -155,5 +162,6 @@
     <string name="sinhala_contact">අමතන්න</string>
     <string name="sinhala_addshop">සාප්පුවක් එක් කරන්න</string>
     <string name="sinhala_disease_list">රෝග</string>
+    <string name="sinhala_add_members">සාමාජිකයින් එකතු කරන්න</string>
 
 </resources>
