@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class Parent extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 	
@@ -37,8 +38,8 @@ public class Parent extends AppCompatActivity implements BottomNavigationView.On
 		BottomNavigationView navigation = findViewById(R.id.navigation);
 		navigation.setOnNavigationItemSelectedListener(Parent.this);
 		
-/*		checkUserStatus();
-		updateToken(FirebaseInstanceId.getInstance().getToken());*/
+//		checkUserStatus();
+//		updateToken(FirebaseInstanceId.getInstance().getToken());
 	}
 	
 	@Override
@@ -54,10 +55,6 @@ public class Parent extends AppCompatActivity implements BottomNavigationView.On
 				Intent intent = new Intent(Parent.this, DiseaseRecognition.class);
 				startActivity(intent);
 				break;
-			
-			/*case R.id.nav_community:
-				fragment = new Chat();
-				break;*/
 			
 			case R.id.nav_menu:
 				fragment = new Menu();
@@ -100,13 +97,13 @@ public class Parent extends AppCompatActivity implements BottomNavigationView.On
 	
 	@Override
 	protected void onStart() {
-		//checkUserStatus();
+		checkUserStatus();
 		super.onStart();
 	}
 	
 	@Override
 	protected void onResume() {
-		//checkUserStatus();
+		checkUserStatus();
 		super.onResume();
 	}
 }

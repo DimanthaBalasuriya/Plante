@@ -14,10 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import com.example.plante.Parent;
 import com.example.plante.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class Setting extends AppCompatActivity {
@@ -80,6 +82,8 @@ public class Setting extends AppCompatActivity {
 		imv_sett_back.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Intent intent = new Intent(Setting.this, Parent.class);
+				startActivity(intent);
 				finish();
 			}
 		});
@@ -88,7 +92,11 @@ public class Setting extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				mAuth.signOut();
-				checkUserStatus();
+				//checkUserStatus();
+				host_user_in_device("null", "null");
+				finish();
+				Intent intent = new Intent(Setting.this, Login.class);
+				startActivity(intent);
 			}
 		});
 		
@@ -143,13 +151,13 @@ public class Setting extends AppCompatActivity {
 	}
 	
 	private void checkUserStatus() {
-/*		FirebaseUser user = mAuth.getCurrentUser();
+		FirebaseUser user = mAuth.getCurrentUser();
 		if (user != null) {
 			
 		} else {
 			startActivity(new Intent(getApplicationContext(), Login.class));
 			finish();
-		}*/
+		}
 	}
 	
 	private void subscribePostNotification() {
@@ -177,4 +185,14 @@ public class Setting extends AppCompatActivity {
 			}
 		});
 	}
+	
+	private void host_user_in_device(String username, String password) {
+		SharedPreferences sp = getSharedPreferences("Credential", MODE_PRIVATE);
+		SharedPreferences.Editor edt = sp.edit();
+		edt.putString("username", username);
+		edt.putString("password", password);
+		edt.commit();
+	}
+	
 }
+

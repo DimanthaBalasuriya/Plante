@@ -26,13 +26,15 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 public class Login extends AppCompatActivity {
 	
 	private Button btn_login;
 	private EditText edt_username, edt_password;
-	private TextView txv_forgetpassword, txv_createnewaccount;
+	private TextView txv_forgetpassword, txv_createnewaccount, txv_state;
 	private Intent intent;
 	
 	private FirebaseAuth mAuth;
@@ -49,6 +51,7 @@ public class Login extends AppCompatActivity {
 		txv_forgetpassword = findViewById(R.id.txv_forgetpassword);
 		edt_username = findViewById(R.id.edt_username);
 		edt_password = findViewById(R.id.edt_password);
+		txv_state = findViewById(R.id.txv_state);
 		
 		mAuth = FirebaseAuth.getInstance();
 		
@@ -75,23 +78,36 @@ public class Login extends AppCompatActivity {
 		btn_login.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				pd.setMessage("Signing in...");
+				pd.show();
 				String username = edt_username.getText().toString().trim();
 				String password = edt_password.getText().toString().trim();
 				if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
-					edt_username.setText("Enter valid username!");
-					edt_username.setFocusable(true);
+					Toast.makeText(getApplicationContext(), "Enter Valid user name!", Toast.LENGTH_SHORT).show();
+					pd.dismiss();
 				} else if (password.length() < 8) {
 					Toast.makeText(getApplicationContext(), "Must be greater than 8 charcters!", Toast.LENGTH_SHORT).show();
+					pd.dismiss();
 				} else {
 					executeLogin(username, password);
 				}
 			}
 		});
+		
+		setUserGreet();
+	}
+	
+	private void setUserGreet() {
+		Date d = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("a");
+		if (sdf.format(new Date()).equalsIgnoreCase("AM")) {
+			txv_state.setText(R.string.good_morning);
+		} else if (sdf.format(new Date()).equalsIgnoreCase("PM")) {
+			txv_state.setText(R.string.good_evening);
+		}
 	}
 	
 	private void executeLogin(String username, String password) {
-		pd.setMessage("Signing in...");
-		pd.show();
 		mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 			@Override
 			public void onComplete(@NonNull Task<AuthResult> task) {

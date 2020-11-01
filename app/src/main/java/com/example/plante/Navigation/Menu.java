@@ -162,6 +162,7 @@ public class Menu extends Fragment {
 			public void onClick(View v) {
 				intent = new Intent(getActivity(), Setting.class);
 				startActivity(intent);
+				getActivity().finish();
 			}
 		});
 		

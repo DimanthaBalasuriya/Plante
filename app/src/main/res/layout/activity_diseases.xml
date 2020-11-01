@@ -54,25 +54,6 @@
             android:scaleType="centerCrop"
             android:src="@drawable/ic_add_box" />
 
-        <EditText
-            android:id="@+id/edt_search_bar"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/imv_disease_add"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/edt_search_background"
-            android:drawableRight="@drawable/ic_search"
-            android:hint="Search"
-            android:paddingLeft="10dp"
-            android:paddingRight="8dp"
-            android:textColor="@color/colorBlack"
-            android:textColorHint="@color/colorBlack"
-            android:textSize="16dp" />
-
     </RelativeLayout>
 
     <RelativeLayout
@@ -86,9 +67,9 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="11dp"
             android:layout_marginTop="6dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/list_item_disease_list" />
 

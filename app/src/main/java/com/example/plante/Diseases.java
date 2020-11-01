@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.plante.Adapter.AdapterDiseaseList;
 import com.example.plante.Base_module.ModelDiseasesList;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,6 +42,8 @@ public class Diseases extends AppCompatActivity {
 	private FirebaseAuth mAuth;
 	
 	private TextView title;
+	
+	private String userType;
 	
 	SharedPreferences languagesp;
 	SharedPreferences.Editor language;
@@ -95,13 +99,11 @@ public class Diseases extends AppCompatActivity {
 	}
 	
 	private void changeToEnglish() {
-		edt_search_bar.setText(R.string.search);
-		title.setText(R.string.adddisease);
+		title.setText(R.string.disease_list);
 	}
 	
 	private void changeToSinhala() {
-		edt_search_bar.setText(R.string.sinhala_search);
-		title.setText(R.string.sinhala_adddisease);
+		title.setText(R.string.sinhala_disease_list);
 	}
 	
 	private void fetchListItemsToList() {
@@ -124,5 +126,31 @@ public class Diseases extends AppCompatActivity {
 			
 			}
 		});
+	}
+	
+	@Override
+	protected void onStart() {
+		FirebaseUser user = mAuth.getCurrentUser();
+		FirebaseDatabase database = FirebaseDatabase.getInstance();
+		DatabaseReference myRef = database.getReference("User").child(user.getUid()).child("type");
+		myRef.addValueEventListener(new ValueEventListener() {
+			@Override
+			public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+				userType = dataSnapshot.getValue(String.class) + "";
+				
+				if (userType.equalsIgnoreCase("Admin")) {
+					imv_disease_add.setVisibility(View.VISIBLE);
+				} else {
+					imv_disease_add.setVisibility(View.INVISIBLE);
+				}
+			}
+			
+			@Override
+			public void onCancelled(@NonNull DatabaseError databaseError) {
+				Toast.makeText(getApplicationContext(), "Can't Load User Data!", Toast.LENGTH_LONG).show();
+			}
+		});
+		
+		super.onStart();
 	}
 }

@@ -49,6 +49,7 @@ public class SplashScreen extends AppCompatActivity {
 								if (task.isSuccessful()) {
 									Intent intent = new Intent(SplashScreen.this, Parent.class);
 									startActivity(intent);
+									finish();
 								} else {
 									Toast.makeText(getApplicationContext(), "Error With Credentials!", Toast.LENGTH_LONG).show();
 								}

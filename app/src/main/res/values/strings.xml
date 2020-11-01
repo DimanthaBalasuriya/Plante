@@ -89,6 +89,9 @@
     <string name="city">City</string>
     <string name="contact">Contact</string>
     <string name="addshop">Add Shop</string>
+    <string name="disease_list">Disease</string>
+    <string name="good_morning">Good Morning!</string>
+    <string name="good_evening">Good Evening!</string>
 
     <string name="sinhala_setting">සැකසුම</string>
     <string name="sinhala_notification">දැනුම්දීම</string>
@@ -151,5 +154,6 @@
     <string name="sinhala_city">නගරය</string>
     <string name="sinhala_contact">අමතන්න</string>
     <string name="sinhala_addshop">සාප්පුවක් එක් කරන්න</string>
+    <string name="sinhala_disease_list">රෝග</string>
 
 </resources>

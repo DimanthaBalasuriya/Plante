@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.plante.Adapter.AdapterShop;
 import com.example.plante.Base_module.ModelShop;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,6 +45,8 @@ public class Stores extends AppCompatActivity {
 	
 	String city = "";
 	String country = "";
+	
+	private String userType;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -126,4 +130,34 @@ public class Stores extends AppCompatActivity {
 		});
 	}
 	
+	@Override
+	protected void onStart() {
+		FirebaseUser user = mAuth.getCurrentUser();
+		FirebaseDatabase database = FirebaseDatabase.getInstance();
+		DatabaseReference myRef = database.getReference("User").child(user.getUid()).child("type");
+		myRef.addValueEventListener(new ValueEventListener() {
+			@Override
+			public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+				userType = dataSnapshot.getValue(String.class) + "";
+				
+				if (userType.equalsIgnoreCase("Admin")) {
+					imv_store_add.setVisibility(View.VISIBLE);
+				} else {
+					imv_store_add.setVisibility(View.INVISIBLE);
+				}
+			}
+			
+			@Override
+			public void onCancelled(@NonNull DatabaseError databaseError) {
+				Toast.makeText(getApplicationContext(), "Can't Load User Data!", Toast.LENGTH_LONG).show();
+			}
+		});
+		
+		super.onStart();
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
 }

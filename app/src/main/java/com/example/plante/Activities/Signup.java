@@ -23,8 +23,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
@@ -34,6 +37,8 @@ public class Signup extends AppCompatActivity {
 	private EditText edt_sign_username, edt_sign_password, edt_sign_confirm_password;
 	private TextView txv_alreadyuser;
 	private Intent intent;
+	
+	private String userType;
 	
 	private FirebaseAuth mAuth;
 	
@@ -137,4 +142,5 @@ public class Signup extends AppCompatActivity {
 		edt.putString("password", password);
 		edt.commit();
 	}
+	
 }
